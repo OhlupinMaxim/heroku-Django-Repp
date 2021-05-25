@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Личный кабинет{% endblock %}
+{% block header %}Личный кабинет{% endblock %}
+{% block content %}
+
+<main role="main" class="container">
+    <div class="row">
+        {% include "include/profile_item.html" %}
+        <div class="col-md-9">
+
+            <div class="card mb-3 mt-1 shadow-sm">
+                <div class="card-body">
+                    {% include "include/post_item.html" with post=post %}
+                    {% include "include/comment.html" with post=post comments=comments %}
+                </div>
+            </div>
+</main>
+
+{% endblock %}
